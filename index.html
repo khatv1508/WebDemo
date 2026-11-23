@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROMPT HISTORY · Học Lịch sử cùng AI</title>
+<meta name="description" content="Prompt chuẩn giúp học sinh THPT dùng AI để khai thác tư liệu lịch sử: tự nghĩ trước, AI gợi ý, em tự kết luận.">
+<meta property="og:title" content="PROMPT HISTORY · Học Lịch sử cùng AI">
+<meta property="og:description" content="Prompt chuẩn giúp học sinh THPT dùng AI để khai thác tư liệu lịch sử: tự nghĩ trước, AI gợi ý, em tự kết luận.">
+<meta name="theme-color" content="#FAF6EF">
+<link rel="icon" type="image/png" href="drum.png">
+<link rel="apple-touch-icon" href="drum.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap&subset=vietnamese" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drum bg-drum" aria-hidden="true"></div>
+<div class="ambient-glow" aria-hidden="true"></div>
+
+<div class="page">
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="PROMPT HISTORY - Về đầu trang">
+      <div class="brand-icon-wrap">
+        <span class="drum logo-drum" aria-hidden="true"></span>
+      </div>
+      <div class="brand-text-col">
+        <span class="brand-title">PROMPT HISTORY</span>
+        <span class="brand-sub">HỌC LỊCH SỬ CÙNG AI</span>
+      </div>
+      <span class="brand-badge">THPT</span>
+    </a>
+    
+    <div class="nav-right">
+      <nav aria-label="Mục lục chính">
+        <a href="#hoi-ai" class="nav-link"><span class="nav-num">4 Bước</span> Hỏi AI</a>
+        <a href="#quy-tac" class="nav-link"><span class="nav-num">5 Điều</span> Quy tắc vàng</a>
+        <a href="#tat-ca" class="nav-link">Ngân hàng prompt</a>
+      </nav>
+      
+      <div class="theme-picker-wrap">
+        <svg class="theme-icon" viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+          <path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd" />
+        </svg>
+        <select id="theme-picker" class="theme-select" aria-label="Chọn giao diện màu">
+          <option value="default">🎨 Nâu Đồng Đông Sơn</option>
+          <option value="crimson">🔴 Đỏ Chu Sa Hoàng Triều</option>
+          <option value="indigo">🔵 Xanh Chàm Khảo Cổ</option>
+          <option value="jade">🟢 Ngọc Bích Cổ Điển</option>
+          <option value="dark">🌙 Huyền Đồng (Chế độ tối)</option>
+        </select>
+      </div>
+
+      <button class="help-btn" type="button" id="help-btn" aria-label="Mở hướng dẫn sử dụng">
+        <svg class="help-btn-icon" viewBox="0 0 20 20" fill="currentColor" width="15" height="15" aria-hidden="true">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 10-1-1zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+        </svg>
+        <span>Hướng dẫn</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-pulse"></span>
+        <span class="badge-text">Đề tài KHKT Quốc Gia · Lịch sử & AI Tạo sinh</span>
+      </div>
+      
+      <h1>
+        <span class="h1-a">Prompt chuẩn</span>
+        <span class="h1-b">Học Lịch sử cùng AI</span>
+      </h1>
+      
+      <div class="flock h1-flock" aria-hidden="true"><div class="band"></div></div>
+      
+      <p class="lead">
+        Bộ công cụ hỗ trợ học sinh THPT khai thác tư liệu lịch sử: 
+        <strong>em tự nghĩ trước, AI gợi ý & phản biện, em tự đúc kết kết luận</strong>.
+      </p>
+
+      <div class="hero-features-bar">
+        <div class="feat-pill"><span class="feat-icon">📖</span> SGK Kết nối tri thức 2026–2027</div>
+        <div class="feat-pill"><span class="feat-icon">🏛️</span> GDĐP Đà Nẵng Lớp 11</div>
+        <div class="feat-pill"><span class="feat-icon">⚡</span> Chuẩn hóa 6 Kĩ năng sử học</div>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <a href="#b1" class="step-link">
+            <b>01</b>
+            <div class="step-link-txt">
+              <strong>Chọn bài đang học</strong>
+              <span>Khối 10, 11, 12</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#b2" class="step-link">
+            <b>02</b>
+            <div class="step-link-txt">
+              <strong>Chọn đoạn tư liệu</strong>
+              <span>Khung tư liệu SGK hoặc dán nguồn</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#b3" class="step-link">
+            <b>03</b>
+            <div class="step-link-txt">
+              <strong>Chọn việc muốn làm & chép prompt</strong>
+              <span>6 kỹ năng xử lý sử liệu chuyên sâu</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#b4" class="step-link">
+            <b>04</b>
+            <div class="step-link-txt">
+              <strong>Kiểm chứng & Khai báo dùng AI</strong>
+              <span>Đối chiếu SGK và tạo trích dẫn bài nộp</span>
+            </div>
+          </a>
+        </li>
+      </ol>
+    </div>
+
+    <div class="hero-drum-col">
+      <div class="hero-drum-aura"></div>
+      <div class="hero-drum-circle">
+        <div class="drum hero-drum" role="img" aria-label="Họa tiết mặt trống đồng Đông Sơn xoay tròn"></div>
+      </div>
+      <div class="hero-drum-caption">
+        <span class="caption-tag">HOA VĂN ĐÔNG SƠN</span>
+        <span class="caption-sub">Tự hào di sản · Vững bước tương lai</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="quy-tac" class="rq-banner" aria-label="Điều em cần biết trước khi bắt đầu">
+    <div class="rq-banner-left">
+      <div class="rq-banner-badge">
+        <span class="rq-badge-icon">🛡️</span>
+        <span>NGUYÊN TẮC HỌC TẬP CÓ TRÁCH NHIỆM</span>
+      </div>
+      <h2>5 điều cần nhớ khi học Lịch sử cùng AI</h2>
+      <p class="wiz-help" id="rq-status">Làm nhanh 5 tình huống thực tế (khoảng 1 phút) để hiểu đúng vai trò của AI và rèn tư duy phản biện.</p>
+    </div>
+    <div class="rq-banner-right">
+      <button class="btn rq-open" type="button" id="rq-open">
+        <span>Bắt đầu 5 tình huống</span>
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M5 10h10M11 6l4 4-4 4"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <section id="hoi-ai" class="wiz" aria-label="Hỏi AI theo 4 bước">
+    <!-- BƯỚC 1 -->
+    <div class="wiz-step" id="b1">
+      <div class="wiz-no-col">
+        <div class="wiz-no">01</div>
+        <div class="wiz-line-track"></div>
+      </div>
+      <div class="wiz-body">
+        <div class="step-header">
+          <span class="step-tag">BƯỚC 1 / 4</span>
+          <h2>Em đang học bài nào?</h2>
+        </div>
+        <p class="wiz-help">Chọn khối lớp bên dưới, sau đó mở danh sách "Chủ đề" để chọn đúng bài học em muốn khai thác.</p>
+        
+        <div class="grade-bar">
+          <div class="grades" id="grades" role="tablist" aria-label="Chọn khối lớp"></div>
+          <div class="topic-pick">
+            <label for="topic">Chủ đề bài học</label>
+            <div class="combo" id="topic-combo">
+              <input id="topic" readonly autocomplete="off" role="combobox" aria-expanded="false" aria-controls="topic-list" placeholder="Chọn hoặc tìm tên bài học...">
+              <div class="combo-btns">
+                <button type="button" class="combo-clear" aria-label="Xóa chủ đề" hidden title="Xóa chọn">×</button>
+                <button type="button" class="combo-toggle" aria-label="Mở danh sách chủ đề" tabindex="-1">
+                  <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                    <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <ul class="combo-list" id="topic-list" role="listbox" hidden></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-note-box">
+          <span class="note-icon">ℹ️</span>
+          <p class="topic-note">
+            Chủ đề bám sát SGK Lịch sử bộ <strong>Kết nối tri thức với cuộc sống</strong> (bộ sách chuẩn dùng thống nhất toàn quốc từ năm học 2026 – 2027) và <strong>Tài liệu Giáo dục địa phương thành phố Đà Nẵng</strong>. Khối 11 là trọng tâm đề tài; khối 10 và 12 được tích hợp bản demo đầy đủ.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BƯỚC 2 -->
+    <div class="wiz-step" id="b2">
+      <div class="wiz-no-col">
+        <div class="wiz-no">02</div>
+        <div class="wiz-line-track"></div>
+      </div>
+      <div class="wiz-body">
+        <div class="step-header">
+          <span class="step-tag">BƯỚC 2 / 4</span>
+          <h2>Chọn một đoạn tư liệu</h2>
+        </div>
+        <p class="wiz-help">
+          <strong>Tư liệu lịch sử</strong> là bằng chứng sống từ quá khứ: lời vua ban, bài hịch tướng sĩ, ghi chép của sử gia, lời thề của chiến sĩ... Trong SGK, chúng nằm ở các khung "Tư liệu". Em hãy chọn một tư liệu gợi ý sẵn bên dưới, hoặc tự dán đoạn văn bản trong sách của em.
+        </p>
+
+        <div class="src-panel" id="src-panel"></div>
+
+        <details class="own-src" id="own-wrap">
+          <summary>
+            <span class="summary-icon">✍️</span>
+            <span>Hoặc dán đoạn tư liệu trong sách giáo khoa của em</span>
+          </summary>
+          <div class="own-src-content">
+            <textarea id="own-src" placeholder="Chép hoặc gõ đoạn tư liệu lịch sử trong sách của em vào đây (lời vua, bài hịch, đoạn văn bản lịch sử...)"></textarea>
+            <button class="btn next-hop" type="button" id="own-go">
+              <span>Dùng đoạn này, sang bước 3</span>
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </button>
+          </div>
+        </details>
+
+        <div class="picked-container">
+          <p class="picked" id="picked" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BƯỚC 3 -->
+    <div class="wiz-step" id="b3">
+      <div class="wiz-no-col">
+        <div class="wiz-no">03</div>
+        <div class="wiz-line-track"></div>
+      </div>
+      <div class="wiz-body">
+        <div class="step-header">
+          <span class="step-tag">BƯỚC 3 / 4</span>
+          <h2>Em muốn làm gì với đoạn tư liệu?</h2>
+        </div>
+        <p class="wiz-help">
+          Chọn mục tiêu phù hợp với bài học. Hệ thống sẽ chuẩn hóa câu lệnh (prompt) với phương pháp sư phạm: <strong>AI gợi ý và phản biện chứ không làm thay</strong>, giúp em tự hiểu sâu sắc vấn đề.
+        </p>
+
+        <div class="goals" id="goals" role="group" aria-label="Chọn điều em muốn làm"></div>
+        <div class="goal-detail" id="goal-detail" hidden></div>
+      </div>
+    </div>
+
+    <!-- BƯỚC 4 -->
+    <div class="wiz-step" id="b4">
+      <div class="wiz-no-col">
+        <div class="wiz-no">04</div>
+      </div>
+      <div class="wiz-body">
+        <div class="step-header">
+          <span class="step-tag">BƯỚC 4 / 4</span>
+          <h2>Trước khi dùng câu trả lời của AI</h2>
+        </div>
+        <p class="wiz-help">
+          Dù em đặt câu hỏi chuẩn, AI vẫn có khả năng "bịa đặt" (hallucination) hoặc nhầm lẫn niên đại, nhân vật. Hãy hoàn thành 3 câu tự kiểm tra và tạo đoạn khai báo minh bạch cho bài làm của mình.
+        </p>
+
+        <div class="after-grid">
+          <!-- Cột trái: 3 câu tự hỏi -->
+          <div class="box qc-box">
+            <div class="box-head">
+              <span class="box-icon">⚖️</span>
+              <div>
+                <h3>3 câu tự hỏi kiểm chứng</h3>
+                <p class="box-sub">Tự đánh giá trước khi lấy thông tin từ AI</p>
+              </div>
+            </div>
+            <div class="qc" id="qc"></div>
+            <div class="verdict-wrap">
+              <p class="verdict" id="qc-verdict">Hãy trả lời 3 câu hỏi trên để hoàn thành bước kiểm chứng.</p>
+            </div>
+          </div>
+
+          <!-- Cột phải: Khai báo AI -->
+          <div class="box decl-box">
+            <details class="decl-wrap">
+              <summary>
+                <div class="decl-summary-left">
+                  <span class="box-icon">📝</span>
+                  <div>
+                    <b>Em sẽ nộp bài có dùng AI hỗ trợ?</b>
+                    <span>Tạo đoạn khai báo minh bạch (Academic Citation)</span>
+                  </div>
+                </div>
+                <span class="decl-toggle-arrow">▼</span>
+              </summary>
+              
+              <div class="decl-body">
+                <div class="decl-why">
+                  <p><strong>Khai báo dùng AI là gì?</strong> Là vài dòng ghi chú ở cuối bài tập, bài thuyết trình hoặc slide, ghi rõ chatbot đã dùng, mục đích và tài liệu kiểm chứng.</p>
+                  <p><strong>Ý nghĩa:</strong> Giống như trích dẫn tài liệu tham khảo: giúp thầy cô biết phần nào AI hỗ trợ gợi ý, phần nào do chính em tự lập luận và kết luận.</p>
+                </div>
+
+                <div class="declare">
+                  <label for="d-tool">
+                    <span>Chatbot em đã sử dụng</span>
+                    <select id="d-tool">
+                      <option>ChatGPT</option>
+                      <option>Gemini</option>
+                      <option>Claude</option>
+                      <option>Copilot</option>
+                      <option>Chatbot khác</option>
+                    </select>
+                  </label>
+                  <label for="d-check">
+                    <span>Em đã kiểm tra đối chiếu lại ở đâu?</span>
+                    <input id="d-check" placeholder="Ví dụ: SGK Lịch sử 11, trang 52">
+                  </label>
+                </div>
+
+                <div class="declare-out-wrap">
+                  <span class="preview-badge">VĂN BẢN TRÍCH DẪN TẠO SẴN</span>
+                  <div class="declare-out" id="d-out"></div>
+                </div>
+
+                <div class="dlg-foot" style="margin-top:14px">
+                  <button class="btn" type="button" id="d-copy">
+                    <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"/><path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"/></svg>
+                    <span>Sao chép đoạn khai báo</span>
+                  </button>
+                  <span class="copied" id="d-copied" aria-live="polite"></span>
+                </div>
+                <p class="hint" style="margin-top:10px">💡 Dán đoạn văn bản này vào cuối bài viết, trang cuối Word hoặc slide thuyết trình của em.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="flock" aria-hidden="true"><div class="band"></div></div>
+
+<!-- TẤT CẢ PROMPT (DANH SÁCH TỔNG QUAN) -->
+<section class="block" id="tat-ca">
+  <div class="wrap">
+    <details class="all-prompts">
+      <summary>
+        <div class="all-prompts-title">
+          <span class="summary-book-icon">📚</span>
+          <div>
+            <b>Ngân hàng tất cả Prompt chuẩn</b>
+            <em>Dành cho giáo viên, nghiên cứu sinh và học sinh đã quen dùng</em>
+          </div>
+        </div>
+        <span class="sum-hint">
+          <span>Xem trọn bộ</span>
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </span>
+      </summary>
+      <div class="all-prompts-body">
+        <div class="filters-header">
+          <span>Lọc theo nhóm mục tiêu sử học:</span>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="Lọc prompt theo kĩ năng"></div>
+        <div class="bank" id="bank"></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-left">
+      <div class="footer-brand">
+        <span class="drum footer-drum" aria-hidden="true"></span>
+        <strong>PROMPT HISTORY</strong>
+      </div>
+      <p>Sản phẩm ứng dụng của Đề tài Nghiên cứu Khoa học Kỹ thuật dành cho học sinh trung học: <em>"AI tạo sinh và năng lực khai thác tư liệu lịch sử của học sinh lớp 11"</em>.</p>
+    </div>
+    <div class="footer-right">
+      <p class="footer-note">Được thiết kế dựa trên phương pháp sư phạm hiện đại. Bản quyền phương pháp & prompt thuộc nhóm tác giả và cố vấn chuyên môn Lịch sử.</p>
+      <div class="footer-sub">Phiên bản chuẩn hóa 2026 – 2027 · Tương thích toàn diện PC & Mobile</div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<!-- MODAL: 5 ĐIỀU CẦN NHỚ (QUIZ) -->
+<dialog id="rq-dlg" class="rq-dlg" aria-labelledby="rq-title">
+  <div class="rq-in">
+    <div class="reader-head">
+      <div class="dialog-title-wrap">
+        <span class="dialog-title-icon">🛡️</span>
+        <h3 id="rq-title">5 điều cần nhớ khi học Lịch sử cùng AI</h3>
+      </div>
+      <button class="close" type="button" id="rq-close" aria-label="Đóng hộp thoại">×</button>
+    </div>
+    <div class="rq-body">
+      <div class="rq-card" id="rq-card"></div>
+    </div>
+  </div>
+</dialog>
+
+<!-- MODAL: PHÓNG TO ĐỌC / SOẠN THẢO TƯ LIỆU -->
+<dialog id="reader" class="reader" aria-labelledby="reader-title">
+  <div class="reader-in">
+    <div class="reader-head">
+      <div class="dialog-title-wrap">
+        <span class="dialog-title-icon">🔍</span>
+        <h3 id="reader-title">Chế độ phóng to đọc</h3>
+      </div>
+      <div class="reader-tools">
+        <button class="btn-text" type="button" id="reader-smaller" aria-label="Chữ nhỏ hơn">A−</button>
+        <button class="btn-text" type="button" id="reader-bigger" aria-label="Chữ to hơn">A+</button>
+        <button class="close" type="button" id="reader-close" aria-label="Đóng">×</button>
+      </div>
+    </div>
+    <div class="reader-body" id="reader-body"></div>
+  </div>
+</dialog>
+
+<!-- MODAL: ĐIỀN PROMPT TỪ NGÂN HÀNG TỔNG QUAN -->
+<dialog id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg">
+    <div class="dlg-head">
+      <div>
+        <div class="meta" style="justify-content:flex-start;gap:10px">
+          <span id="dlg-no">Phiếu 01</span>
+          <span class="tag" id="dlg-tag">Kĩ năng</span>
+        </div>
+        <h3 id="dlg-title">Tiêu đề Prompt</h3>
+        <p class="hint" id="dlg-why" style="margin-top:4px"></p>
+      </div>
+      <button class="close" type="button" id="dlg-close" aria-label="Đóng">×</button>
+    </div>
+    <div class="fields" id="dlg-fields"></div>
+    <div class="preview-section">
+      <span class="preview-label">Prompt hoàn chỉnh sẵn sàng sao chép:</span>
+      <div class="preview" id="dlg-preview"></div>
+    </div>
+    <div class="dlg-foot">
+      <button class="btn" type="button" id="dlg-copy">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"/><path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"/></svg>
+        <span>Sao chép prompt này</span>
+      </button>
+      <span class="copied" id="dlg-copied" aria-live="polite"></span>
+      <span class="hint">Dán vào ChatGPT, Gemini hoặc chatbot em đang dùng.</span>
+    </div>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
